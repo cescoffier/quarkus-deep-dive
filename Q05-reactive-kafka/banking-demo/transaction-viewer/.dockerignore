@@ -1,0 +1,4 @@
+transaction-viewer.iml
+!target/*-runner
+!target/*-runner.jar
+!target/lib/*

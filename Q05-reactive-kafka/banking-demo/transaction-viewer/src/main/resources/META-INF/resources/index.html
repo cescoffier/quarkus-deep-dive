@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Account</title>
+
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/patternfly/3.24.0/css/patternfly.min.css">
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/patternfly/3.24.0/css/patternfly-additions.min.css">
+</head>
+<body>
+
+
+
+<div class="container">
+
+    <h1>Transactions</h1>
+
+    <p>
+        Live list of transactions...
+    </p>
+
+    <table class="table table-striped">
+        <thead class="thead-dark">
+        <tr>
+        <th>Account</th>
+        <th>Kind</th>
+        <th>Amount</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+</div>
+
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/patternfly/3.24.0/js/patternfly.min.js"></script>
+
+<script>
+
+    $(function () {
+        var source = new EventSource("http://localhost:8082/tx");
+        source.onmessage = function(e) {
+            console.log(e);
+            var tx = JSON.parse(e.data);
+            $("tbody").append(line(tx));
+        };
+    });
+
+    function line(tx) {
+        return "<tr><td>" + tx.account + "</td><td>" + tx.kind + "</td><td>" + tx.amount + "</td></tr>";
+    }
+
+
+</script>
+</html>
