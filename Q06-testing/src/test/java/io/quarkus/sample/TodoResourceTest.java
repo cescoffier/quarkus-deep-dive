@@ -8,6 +8,8 @@ import io.restassured.mapper.TypeRef;
 import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.*;
 import org.testcontainers.containers.PostgreSQLContainer;
+import org.testcontainers.junit.jupiter.Container;
+import org.testcontainers.junit.jupiter.Testcontainers;
 import org.testcontainers.shaded.org.apache.http.HttpHeaders;
 import org.testcontainers.shaded.org.apache.http.HttpStatus;
 
@@ -18,11 +20,13 @@ import static io.restassured.RestAssured.*;
 import static junit.framework.TestCase.assertEquals;
 import static org.hamcrest.core.Is.is;
 
+@Testcontainers
 @QuarkusTest
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class TodoResourceTest {
 
-    private static final PostgreSQLContainer database = new PostgreSQLContainer<>()
+    @Container
+    public static final PostgreSQLContainer DATABASE = new PostgreSQLContainer<>()
             .withDatabaseName("rest-crud")
             .withUsername("restcrud")
             .withPassword("restcrud")
@@ -32,16 +36,6 @@ class TodoResourceTest {
                             .withHostName("localhost")
                             .withPortBindings(new PortBinding(Ports.Binding.bindPort(5432), new ExposedPort(5432)))
             );
-
-    @BeforeAll
-    static void startDatabase() {
-        database.start();
-    }
-
-    @AfterAll
-    static void stopDatabase() {
-        database.stop();
-    }
 
     @Test
     @Order(1)
