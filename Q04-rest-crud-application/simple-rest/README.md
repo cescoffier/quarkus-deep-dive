@@ -30,6 +30,7 @@ http :8080
 
 _Prerequisites_:
 
+* For light background, set `QUARKUS_LOG_CONSOLE_DARKEN=2`
 * Delete the methods from the `MyRestResource` class (keep the class declaration and the list declaration).
 
 1. Run `mvn compile quarkus:dev` 
