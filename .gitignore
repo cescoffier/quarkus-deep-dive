@@ -156,3 +156,6 @@ local.properties
 
 target*
 
+# macOS
+.DS_Store
+
