@@ -12,7 +12,7 @@ _Prerequisites_:
 
 1. Generate project
 ```bash
-mvn io.quarkus:quarkus-maven-plugin:0.13.1:create \
+mvn io.quarkus:quarkus-maven-plugin:0.13.3:create \
     -DprojectGroupId=fr.devoxx \
     -DprojectArtifactId=hello-devoxx-france \
     -DclassName="fr.devoxx.HelloResource" \

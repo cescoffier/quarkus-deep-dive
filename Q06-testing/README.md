@@ -1,11 +1,6 @@
 # TODO Application with Quarkus
 
 
-## Prerequisites
-
-* You need the _master_ branch of Quarkus (or Quarkus 0.13.0+)
-
-
 ## Database
 
 Run:
