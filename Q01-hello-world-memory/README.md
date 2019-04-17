@@ -11,7 +11,7 @@ Demo the app
 
     java -jar ./target/restful-endpoint-thorntail.jar
 
-open https://localhost:8080/hello
+open https://localhost:8080/rest/hello
 
 Then play with memory usage
 
