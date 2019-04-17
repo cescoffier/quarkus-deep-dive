@@ -1,4 +1,4 @@
-# Live coding
+# Q02 - Using GraalVM by hand
 
 Download GraalVM 1.0rc14
 set GRAALVM_HOME and JAVA_HOME to graalvm
@@ -37,7 +37,6 @@ Show Main3
     javac  -d target src/*.java ; cp src/*.properties target/
     time java -cp ./target/ Main4
     ps -o pid,rss,command | grep java
-
 
     native-image -H:IncludeResources='.*/*.properties$' -H:ReflectionConfigurationFiles=others/reflectconfig.json -cp target/ Main4
     ./main4

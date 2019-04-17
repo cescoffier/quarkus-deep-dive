@@ -1,9 +1,12 @@
-# Live coding read me
+# Q01 - Java and RSS
+
+Make sure to use HotSpot JDK and not GraalVM
 
 Open in idea `idea .`  
 Show simple app
 
 * show `pom.xml`
+* Show JAX-RS resource
 
     mvn package
 
@@ -11,7 +14,7 @@ Demo the app
 
     java -jar ./target/restful-endpoint-thorntail.jar
 
-open https://localhost:8080/rest/hello
+open http://localhost:8080/rest/hello
 
 Then play with memory usage
 
@@ -21,8 +24,7 @@ Different OOME
 
     java -Xmx28m -Xms28m -jar ./target/restful-endpoint-thorntail.jar
 
-Minumum heap size
-
+Minimum heap size
 
     java -Xmx29m -Xms29m -jar ./target/restful-endpoint-thorntail.jar
     
@@ -33,4 +35,3 @@ Minumum heap size
 RSS in kbytes
 
     jconsole
-
