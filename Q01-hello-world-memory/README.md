@@ -7,6 +7,12 @@ Show simple app
 
     mvn package
 
+Demo the app
+
+    java -jar ./target/restful-endpoint-thorntail.jar
+
+open https://localhost:8080/hello
+
 Then play with memory usage
 
     java -Xmx10m -Xms10m -jar ./target/restful-endpoint-thorntail.jar
