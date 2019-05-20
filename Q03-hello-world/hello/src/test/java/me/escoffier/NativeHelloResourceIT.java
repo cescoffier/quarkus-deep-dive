@@ -1,4 +1,4 @@
-package fr.devoxx;
+package me.escoffier;
 
 import io.quarkus.test.junit.SubstrateTest;
 

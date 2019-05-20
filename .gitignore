@@ -159,3 +159,5 @@ target*
 # macOS
 .DS_Store
 
+Q01-hello-world-memory/rss-thorntail/.classpath
+Q01-hello-world-memory/rss-thorntail/.project

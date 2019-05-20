@@ -5,6 +5,7 @@ set GRAALVM_HOME and JAVA_HOME to graalvm
 
 ## simple app Main
 
+    mkdir target
     javac -d target src/*.java
     java -cp target/ Main
     native-image -cp target/ Main

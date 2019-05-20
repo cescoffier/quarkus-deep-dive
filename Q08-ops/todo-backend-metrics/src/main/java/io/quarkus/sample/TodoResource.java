@@ -20,8 +20,11 @@ import java.util.List;
 public class TodoResource {
 
     @GET
-    @Counted(name = "getAllCount", monotonic = true, description = "How many getAll calls have been done.")
-    @Timed(name = "getAllTime", description = "How long does the getAll method takes.", unit = MetricUnits.MILLISECONDS)
+    @Counted(name = "getAllCount", monotonic = true,
+            description = "How many getAll calls have been done.")
+    @Timed(name = "getAllTime",
+            description = "How long does the getAll method takes.",
+            unit = MetricUnits.MILLISECONDS)
     public List<Todo> getAll() {
         return Todo.listAll(Sort.by("order"));
     }
@@ -87,9 +90,10 @@ public class TodoResource {
     }
 
 
-    @Gauge(name = "numberOfItems", unit = MetricUnits.NONE, description = "Number of todo list items.")
+    @Gauge(name = "numberOfItems", unit = MetricUnits.NONE,
+            description = "Number of todo list items.")
     public long count() {
-        return Todo.count();
+        return Todo.findCompleted().size();
     }
 
 }
