@@ -26,7 +26,7 @@ cd hello-devoxx-france
 mvn compile quarkus:dev
 ```
 1. Explain the `pom.xml` file (BOM, extensions, tests)
-1. Open the `HelloResource` class, explain the code
+1. Open the `HelloResource` class, explain the code 
 1. Open `application.properties` and `META-INF/resources` (static resources)
 1. Open browser to http://localhost:8080
 1. Open browser to http://localhost:8080/hello
@@ -34,7 +34,7 @@ mvn compile quarkus:dev
 
 ### Add method
 
-1. Add method:
+1. Add method: 
     ```
     @GET
     @Produces(MediaType.TEXT_PLAIN)
@@ -47,7 +47,7 @@ mvn compile quarkus:dev
 
 ### Configuration
 
-1. In the resource, add
+1. In the resource, add 
     ```
     @Inject @ConfigProperty(name = "greeting") String greeting;
     ```
@@ -64,7 +64,7 @@ mvn compile quarkus:dev
 1. Open the `application.properties` file and add:
     ```
     greeting = hello
-    ```
+    ``` 
 1. Refresh browser
 1. In the resource class, add:
     ```
@@ -87,9 +87,9 @@ mvn compile quarkus:dev
     ```
     @ApplicationScoped
     public class MyBean {
-
+    
         @Inject @ConfigProperty(name = "greeting") String greeting;
-
+    
         public String greeting() {
             return greeting;
         }
@@ -114,7 +114,7 @@ mvn compile quarkus:dev
 1. While it's packaging, open `pom.xml` and explain:
     * the `native` profile
     * the `failsafe` configuration
-1. Run application:
+1. Run application: 
 
 ### Linux executable creation
 
@@ -124,7 +124,7 @@ mvn compile quarkus:dev
 1. While building, explain the Docker file (native)
 1. Once built, try to run it and fail (on Mac) with: exec format error:
     ```
-    ./target/hello-devoxx-france-1.0-SNAPSHOT-runner
+    ./target/hello-devoxx-france-1.0-SNAPSHOT-runner 
     ```
 1. Build container with: `docker build -f src/main/docker/Dockerfile.native -t quarkus/hello-devoxx-france .`
 1. Run container with: `docker run -i --rm -p 8080:8080 quarkus/hello-devoxx-france`
@@ -151,3 +151,5 @@ mvn compile quarkus:dev
     ```
     curl $(minikube service quarkus-quickstart --url)/hello
     ```      
+    
+    
