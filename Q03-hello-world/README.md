@@ -7,6 +7,7 @@ _Prerequisites_:
 * Delete the `hello-deboxx-france` directory
 * In the terminal, be sure to have set the `GRAALVM_HOME` environment variable
 * For light background, set `QUARKUS_LOG_CONSOLE_DARKEN=2`
+* You need Maven >= 3.5.3
 * having _minikube_ running is a plus
 
 ### Project generation and run
